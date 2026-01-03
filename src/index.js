@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-export default function SapiensWebsite() {
+function SapiensWebsite() {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedChapter, setSelectedChapter] = useState(null);
   const [activeTab, setActiveTab] = useState('excerpt');
@@ -116,73 +116,44 @@ export default function SapiensWebsite() {
     chapter.description.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
-  const bgColor = darkMode ? 'bg-gray-900' : 'bg-gradient-to-br from-amber-50 via-white to-stone-100';
-  const textColor = darkMode ? 'text-white' : 'text-gray-900';
-  const cardBg = darkMode ? 'bg-gray-800' : 'bg-white';
-  const borderColor = darkMode ? 'border-gray-700' : 'border-amber-200';
+  const bgColor = darkMode ? '#111827' : '#fef3c7';
+  const cardBg = darkMode ? '#1f2937' : '#ffffff';
+  const textColor = darkMode ? '#ffffff' : '#000000';
+  const borderColor = darkMode ? '#374151' : '#fed7aa';
 
   return (
-    <div className={`min-h-screen ${bgColor} transition-colors duration-300`}>
-      <nav className={`${cardBg} shadow-lg sticky top-0 z-50 ${borderColor} border-b`}>
+    <div style={{ minHeight: '100vh', background: bgColor, transition: 'background 0.3s', color: textColor }}>
+      <nav style={{ background: cardBg, boxShadow: '0 4px 6px rgba(0,0,0,0.1)', position: 'sticky', top: 0, zIndex: 50, borderBottom: `1px solid ${borderColor}` }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-            <BookOpen className="w-8 h-8" style={{ color: darkMode ? '#fcd34d' : '#b45309' }} />
-            <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f' }}>📚 Sapiens</h1>
+            <span style={{ fontSize: '2rem' }}>📚</span>
+            <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f', margin: 0 }}>Sapiens</h1>
           </div>
-          <button
-            onClick={() => setDarkMode(!darkMode)}
-            style={{
-              background: 'none',
-              border: 'none',
-              cursor: 'pointer',
-              fontSize: '1.5rem',
-              padding: '0.5rem'
-            }}
-          >
-            {darkMode ? <Sun className="w-6 h-6 text-yellow-400" /> : <Moon className="w-6 h-6 text-gray-600" />}
+          <button onClick={() => setDarkMode(!darkMode)} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.5rem', padding: '0.5rem' }}>
+            {darkMode ? '☀️' : '🌙'}
           </button>
         </div>
       </nav>
 
       <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 1rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '2rem' }}>
         <div>
-          <h2 style={{ fontSize: '3rem', fontWeight: 'bold', background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '1rem' }}>
-            Краткая история человечества
-          </h2>
-          <p style={{ fontSize: '1.125rem', color: darkMode ? '#d1d5db' : '#57534e', marginBottom: '1.5rem', lineHeight: '1.6' }}>
-            Как Homo sapiens пришёл к господству над миром? Какие революции сформировали нашу историю? Куда мы идём в будущем?
-          </p>
+          <h2 style={{ fontSize: '3rem', fontWeight: 'bold', background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', margin: 0, marginBottom: '1rem' }}>Краткая история человечества</h2>
+          <p style={{ fontSize: '1.125rem', color: darkMode ? '#d1d5db' : '#57534e', marginBottom: '1.5rem', lineHeight: '1.6', margin: 0 }}>Как Homo sapiens пришёл к господству над миром? Какие революции сформировали нашу историю? Куда мы идём в будущем?</p>
         </div>
         <div style={{ background: `linear-gradient(135deg, ${darkMode ? '#374151' : '#fcd34d'} 0%, ${darkMode ? '#1f2937' : '#e5e7eb'} 100%)`, borderRadius: '1rem', padding: '2rem', textAlign: 'center', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)' }}>
-          <p style={{ color: darkMode ? '#fcd34d' : '#78350f', fontWeight: '600', fontSize: '1.125rem', fontStyle: 'italic' }}>История не движется к цели</p>
+          <p style={{ color: darkMode ? '#fcd34d' : '#78350f', fontWeight: '600', fontSize: '1.125rem', fontStyle: 'italic', margin: 0 }}>История не движется к цели</p>
         </div>
       </section>
 
       <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem 2rem' }}>
         <div style={{ position: 'relative', marginBottom: '2rem' }}>
-          <input
-            type="text"
-            placeholder="Поиск по главам..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            style={{
-              width: '100%',
-              padding: '0.75rem 1rem 0.75rem 2.5rem',
-              border: `2px solid ${darkMode ? '#374151' : '#fed7aa'}`,
-              borderRadius: '0.5rem',
-              fontSize: '1rem',
-              backgroundColor: darkMode ? '#1f2937' : 'white',
-              color: darkMode ? 'white' : 'black',
-              transition: 'all 0.3s'
-            }}
-          />
+          <input type="text" placeholder="Поиск по главам..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} style={{ width: '100%', padding: '0.75rem 1rem 0.75rem 2.5rem', border: `2px solid ${borderColor}`, borderRadius: '0.5rem', fontSize: '1rem', backgroundColor: cardBg, color: textColor, transition: 'all 0.3s' }} />
           <span style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)' }}>🔍</span>
         </div>
       </section>
 
       <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem 3rem' }}>
         <h3 style={{ fontSize: '2rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f', marginBottom: '2rem' }}>Главы книги</h3>
-        
         {filteredChapters.length === 0 ? (
           <div style={{ textAlign: 'center', padding: '3rem' }}>
             <p style={{ color: darkMode ? '#9ca3af' : '#9f9b97', fontSize: '1.125rem' }}>Главы не найдены</p>
@@ -190,98 +161,28 @@ export default function SapiensWebsite() {
         ) : (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '1.5rem' }}>
             {filteredChapters.map((chapter) => (
-              <div
-                key={chapter.id}
-                onClick={() => setSelectedChapter(selectedChapter?.id === chapter.id ? null : chapter)}
-                style={{
-                  padding: '1.5rem',
-                  borderRadius: '1rem',
-                  border: `2px solid ${selectedChapter?.id === chapter.id ? (darkMode ? '#fbbf24' : '#b45309') : (darkMode ? '#374151' : '#e7e5e4')}`,
-                  background: selectedChapter?.id === chapter.id 
-                    ? (darkMode ? 'linear-gradient(135deg, #374151 0%, #1f2937 100%)' : 'linear-gradient(135deg, #fef3c7 0%, #fce7f3 100%)')
-                    : cardBg,
-                  cursor: 'pointer',
-                  transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
-                  boxShadow: selectedChapter?.id === chapter.id 
-                    ? '0 20px 25px -5px rgba(0, 0, 0, 0.2)'
-                    : '0 1px 3px rgba(0, 0, 0, 0.1)',
-                  transform: selectedChapter?.id === chapter.id ? 'translateY(-4px)' : 'translateY(0)'
-                }}
-              >
+              <div key={chapter.id} onClick={() => setSelectedChapter(selectedChapter?.id === chapter.id ? null : chapter)} style={{ padding: '1.5rem', borderRadius: '1rem', border: `2px solid ${selectedChapter?.id === chapter.id ? (darkMode ? '#fbbf24' : '#b45309') : borderColor}`, background: selectedChapter?.id === chapter.id ? (darkMode ? 'linear-gradient(135deg, #374151 0%, #1f2937 100%)' : 'linear-gradient(135deg, #fef3c7 0%, #fce7f3 100%)') : cardBg, cursor: 'pointer', transition: 'all 0.4s', boxShadow: selectedChapter?.id === chapter.id ? '0 20px 25px -5px rgba(0, 0, 0, 0.2)' : '0 1px 3px rgba(0, 0, 0, 0.1)', transform: selectedChapter?.id === chapter.id ? 'translateY(-4px)' : 'translateY(0)' }}>
                 <div style={{ display: 'flex', alignItems: 'start', gap: '1rem' }}>
-                  <div style={{
-                    fontSize: '2.5rem',
-                    flexShrink: 0
-                  }}>
-                    {chapter.icon}
-                  </div>
+                  <div style={{ fontSize: '2.5rem', flexShrink: 0 }}>{chapter.icon}</div>
                   <div style={{ flex: 1 }}>
-                    <h4 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f' }}>{chapter.title}</h4>
-                    <p style={{ color: darkMode ? '#d1d5db' : '#78716c', marginTop: '0.5rem' }}>{chapter.description}</p>
+                    <h4 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f', margin: 0, marginBottom: '0.5rem' }}>{chapter.title}</h4>
+                    <p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>{chapter.description}</p>
                   </div>
                 </div>
-                
                 {selectedChapter?.id === chapter.id && (
-                  <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: `2px solid ${darkMode ? '#374151' : '#fcd34d'}` }}>
+                  <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: `2px solid ${borderColor}` }}>
                     <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
-                      <button
-                        onClick={(e) => { e.stopPropagation(); setActiveTab('excerpt'); }}
-                        style={{
-                          padding: '0.5rem 0.75rem',
-                          borderRadius: '0.25rem',
-                          border: 'none',
-                          cursor: 'pointer',
-                          background: activeTab === 'excerpt' ? (darkMode ? '#f59e0b' : '#b45309') : (darkMode ? '#1f2937' : '#fef08a'),
-                          color: activeTab === 'excerpt' ? 'white' : (darkMode ? '#fcd34d' : '#78350f'),
-                          fontWeight: '500',
-                          transition: 'all 0.3s'
-                        }}
-                      >
-                        Отрывок
-                      </button>
-                      <button
-                        onClick={(e) => { e.stopPropagation(); setActiveTab('questions'); }}
-                        style={{
-                          padding: '0.5rem 0.75rem',
-                          borderRadius: '0.25rem',
-                          border: 'none',
-                          cursor: 'pointer',
-                          background: activeTab === 'questions' ? (darkMode ? '#f59e0b' : '#b45309') : (darkMode ? '#1f2937' : '#fef08a'),
-                          color: activeTab === 'questions' ? 'white' : (darkMode ? '#fcd34d' : '#78350f'),
-                          fontWeight: '500',
-                          transition: 'all 0.3s'
-                        }}
-                      >
-                        Вопросы
-                      </button>
-                      <button
-                        onClick={(e) => { e.stopPropagation(); setActiveTab('images'); }}
-                        style={{
-                          padding: '0.5rem 0.75rem',
-                          borderRadius: '0.25rem',
-                          border: 'none',
-                          cursor: 'pointer',
-                          background: activeTab === 'images' ? (darkMode ? '#f59e0b' : '#b45309') : (darkMode ? '#1f2937' : '#fef08a'),
-                          color: activeTab === 'images' ? 'white' : (darkMode ? '#fcd34d' : '#78350f'),
-                          fontWeight: '500',
-                          transition: 'all 0.3s'
-                        }}
-                      >
-                        Изображения
-                      </button>
+                      {['excerpt', 'questions', 'images'].map((tab) => (
+                        <button key={tab} onClick={(e) => { e.stopPropagation(); setActiveTab(tab); }} style={{ padding: '0.5rem 0.75rem', borderRadius: '0.25rem', border: 'none', cursor: 'pointer', background: activeTab === tab ? (darkMode ? '#f59e0b' : '#b45309') : (darkMode ? '#1f2937' : '#fef08a'), color: activeTab === tab ? 'white' : (darkMode ? '#fcd34d' : '#78350f'), fontWeight: '500', transition: 'all 0.3s' }}>
+                          {tab === 'excerpt' ? 'Отрывок' : tab === 'questions' ? 'Вопросы' : 'Изображения'}
+                        </button>
+                      ))}
                     </div>
-
-                    {activeTab === 'excerpt' && (
-                      <div>
-                        <p style={{ fontSize: '0.875rem', fontWeight: '600', color: darkMode ? '#fcd34d' : '#78350f', marginBottom: '0.5rem' }}>Отрывок:</p>
-                        <p style={{ color: darkMode ? '#d1d5db' : '#57534e', lineHeight: '1.6', fontStyle: 'italic' }}>{chapter.excerpt}</p>
-                      </div>
-                    )}
-
+                    {activeTab === 'excerpt' && <div><p style={{ fontSize: '0.875rem', fontWeight: '600', color: darkMode ? '#fcd34d' : '#78350f', marginBottom: '0.5rem' }}>Отрывок:</p><p style={{ color: darkMode ? '#d1d5db' : '#57534e', lineHeight: '1.6', fontStyle: 'italic', margin: 0 }}>{chapter.excerpt}</p></div>}
                     {activeTab === 'questions' && (
                       <div>
                         <p style={{ fontSize: '0.875rem', fontWeight: '600', color: darkMode ? '#fcd34d' : '#78350f', marginBottom: '0.75rem' }}>Вопросы для рефлексии:</p>
-                        <ul style={{ listStyle: 'none', padding: 0 }}>
+                        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
                           {chapter.questions.map((q, idx) => (
                             <li key={idx} style={{ color: darkMode ? '#d1d5db' : '#57534e', marginBottom: '0.5rem', display: 'flex', gap: '0.5rem' }}>
                               <span style={{ color: '#f59e0b', fontWeight: 'bold' }}>{idx + 1}.</span>
@@ -291,18 +192,12 @@ export default function SapiensWebsite() {
                         </ul>
                       </div>
                     )}
-
                     {activeTab === 'images' && (
                       <div>
                         <p style={{ fontSize: '0.875rem', fontWeight: '600', color: darkMode ? '#fcd34d' : '#78350f', marginBottom: '0.75rem' }}>Визуальные материалы:</p>
                         <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.75rem' }}>
                           {chapter.images.map((img, idx) => (
-                            <img
-                              key={idx}
-                              src={img}
-                              alt={`Изображение ${idx + 1}`}
-                              style={{ width: '100%', height: '128px', objectFit: 'cover', borderRadius: '0.5rem', border: `1px solid ${darkMode ? '#374151' : '#fed7aa'}` }}
-                            />
+                            <img key={idx} src={img} alt={`Изображение ${idx + 1}`} style={{ width: '100%', height: '128px', objectFit: 'cover', borderRadius: '0.5rem', border: `1px solid ${borderColor}` }} />
                           ))}
                         </div>
                       </div>
@@ -317,24 +212,15 @@ export default function SapiensWebsite() {
 
       <section style={{ background: `linear-gradient(90deg, ${darkMode ? '#1f2937' : '#fef3c7'} 0%, ${darkMode ? '#111827' : '#f5f3f0'} 100%)`, color: darkMode ? '#fcd34d' : '#78350f', padding: '3rem 1rem', marginTop: '3rem' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', textAlign: 'center' }}>
-          <div>
-            <p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e' }}>10</p>
-            <p style={{ color: darkMode ? '#d1d5db' : '#78716c', marginTop: '0.5rem' }}>Основных глав</p>
-          </div>
-          <div>
-            <p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e' }}>70k+</p>
-            <p style={{ color: darkMode ? '#d1d5db' : '#78716c', marginTop: '0.5rem' }}>Лет истории</p>
-          </div>
-          <div>
-            <p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e' }}>30+</p>
-            <p style={{ color: darkMode ? '#d1d5db' : '#78716c', marginTop: '0.5rem' }}>Вопросов для размышления</p>
-          </div>
+          <div><p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', margin: 0, marginBottom: '0.5rem' }}>10</p><p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>Основных глав</p></div>
+          <div><p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', margin: 0, marginBottom: '0.5rem' }}>70k+</p><p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>Лет истории</p></div>
+          <div><p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', margin: 0, marginBottom: '0.5rem' }}>30+</p><p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>Вопросов для размышления</p></div>
         </div>
       </section>
 
       <footer style={{ background: cardBg, color: darkMode ? '#d1d5db' : '#78716c', padding: '2rem 1rem', marginTop: '3rem', textAlign: 'center', borderTop: `1px solid ${borderColor}` }}>
-        <p style={{ marginBottom: '0.5rem' }}>© 2025 Sapiens Study Platform</p>
-        <p style={{ fontSize: '0.875rem', color: darkMode ? '#9ca3af' : '#9f9b97' }}>Основано на книге Юваля Ноа Харари</p>
+        <p style={{ margin: 0, marginBottom: '0.5rem' }}>© 2025 Sapiens Study Platform</p>
+        <p style={{ fontSize: '0.875rem', color: darkMode ? '#9ca3af' : '#9f9b97', margin: 0 }}>Основано на книге Юваля Ноа Харари</p>
       </footer>
     </div>
   );
