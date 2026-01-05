@@ -304,5 +304,4 @@ function SapiensWebsite() {
       <section style={{ background: `linear-gradient(90deg, ${darkMode ? '#1f2937' : '#fef3c7'} 0%, ${darkMode ? '#111827' : '#f5f3f0'} 100%)`, color: darkMode ? '#fcd34d' : '#78350f', padding: '3rem 1rem', marginTop: '3rem' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', textAlign: 'center' }}>
           <div data-animate id="stat-1" style={fadeInStyle('stat-1')}><p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', margin: 0, marginBottom: '0.5rem' }}>10</p><p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>Основных глав</p></div>
-          <div data-animate id="stat-2" style={fadeInStyle('stat-2')}><p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', margin: 0, marginBottom: '0.5rem' }}>70k+</p><p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>Лет истории</p></div>
-          <div data-animate id="stat-3
+          <div data-animate id="stat-2" style={fadeInStyle('stat-2')}><p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', margin: 0, marginBottom: '0.5rem' }}>70k+</p><p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>Л
