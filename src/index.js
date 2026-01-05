@@ -334,6 +334,124 @@ function SapiensWebsite() {
         )}
       </section>
 
+      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 1rem', marginTop: '3rem' }}>
+        <h3 data-animate="true" id="author-title" style={{ fontSize: '2rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f', marginBottom: '2rem', textAlign: 'center', ...fadeInStyle('author-title') }}>
+          👤 Об авторе
+        </h3>
+        
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '2rem', background: cardBg, padding: '2rem', borderRadius: '1rem', border: `2px solid ${borderColor}`, boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
+          <div data-animate="true" id="author-photo" style={{ ...fadeInStyle('author-photo'), display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+            <div style={{ width: '200px', height: '200px', borderRadius: '50%', overflow: 'hidden', border: `4px solid ${darkMode ? '#f59e0b' : '#b45309'}`, marginBottom: '1rem', boxShadow: '0 8px 20px rgba(0,0,0,0.2)' }}>
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" alt="Юваль Ной Харари" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+            </div>
+            <h4 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f', margin: '0 0 0.5rem 0' }}>Юваль Ной Харари</h4>
+            <p style={{ color: darkMode ? '#d1d5db' : '#78716c', fontSize: '0.875rem', textAlign: 'center', margin: 0 }}>Историк, философ, писатель</p>
+          </div>
+          
+          <div data-animate="true" id="author-bio" style={fadeInStyle('author-bio')}>
+            <h5 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', marginBottom: '1rem' }}>📚 Биография</h5>
+            <p style={{ color: darkMode ? '#d1d5db' : '#57534e', lineHeight: '1.6', marginBottom: '1.5rem' }}>
+              Юваль Ной Харари — израильский историк и профессор, специализирующийся на всемирной истории. Родился в 1976 году в Хайфе, Израиль. Его работы сосредоточены на макроисторических вопросах: что отличает человека от других животных? Есть ли справедливость в истории? Счастливы ли люди стали с течением времени?
+            </p>
+            
+            <h5 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', marginBottom: '1rem' }}>🎓 Академический путь</h5>
+            <ul style={{ color: darkMode ? '#d1d5db' : '#57534e', lineHeight: '1.8', paddingLeft: '1.5rem', marginBottom: '1.5rem' }}>
+              <li>Бакалавриат по истории в Еврейском университете в Иерусалиме (2000)</li>
+              <li>Магистратура по средневековой истории (2002)</li>
+              <li>Докторская степень (PhD) по истории в Оксфордском университете (2002-2006)</li>
+              <li>Профессор истории в Еврейском университете с 2005 года</li>
+              <li>Специализация: военная история, средневековье, всемирная история</li>
+            </ul>
+            
+            <h5 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', marginBottom: '1rem' }}>✨ Достижения</h5>
+            <p style={{ color: darkMode ? '#d1d5db' : '#57534e', lineHeight: '1.6', margin: 0 }}>
+              Книги Харари переведены на 65 языков и проданы тиражом более 35 миллионов экземпляров. Его лекции посещают мировые лидеры, включая Эммануэля Макрона, Ангелу Меркель и Марка Цукерберга. В 2019 году Харари и его муж Ицик Яхав основали Sapienship — организацию, занимающуюся глобальными проблемами.
+            </p>
+          </div>
+        </div>
+        
+        <h3 data-animate="true" id="other-books-title" style={{ fontSize: '2rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f', marginBottom: '2rem', marginTop: '4rem', textAlign: 'center', ...fadeInStyle('other-books-title') }}>
+          📖 Другие книги автора
+        </h3>
+        
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}>
+          {[
+            {
+              title: 'Homo Deus: Краткая история будущего',
+              year: '2015',
+              description: 'Что ждёт человечество в будущем? Харари исследует возможные сценарии развития технологий, искусственного интеллекта и биоинженерии.',
+              icon: '🔮',
+              topics: ['Будущее', 'ИИ', 'Биотехнологии']
+            },
+            {
+              title: '21 урок для XXI века',
+              year: '2018',
+              description: 'Анализ самых важных вызовов современности: от технологической революции до постправды и терроризма.',
+              icon: '🌐',
+              topics: ['Современность', 'Технологии', 'Общество']
+            },
+            {
+              title: 'Sapiens: Графическая версия',
+              year: '2020',
+              description: 'Адаптация знаменитого "Sapiens" в формате графического романа с иллюстрациями и более доступным изложением.',
+              icon: '🎨',
+              topics: ['Графика', 'История', 'Комикс']
+            }
+          ].map((book, idx) => (
+            <div 
+              key={idx} 
+              data-animate="true" 
+              id={`book-${idx}`} 
+              style={{ 
+                ...fadeInStyle(`book-${idx}`), 
+                background: cardBg, 
+                padding: '1.5rem', 
+                borderRadius: '1rem', 
+                border: `2px solid ${borderColor}`, 
+                transition: 'all 0.3s ease',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-8px)';
+                e.currentTarget.style.boxShadow = '0 15px 30px rgba(0,0,0,0.2)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
+              }}
+            >
+              <div style={{ fontSize: '3rem', marginBottom: '1rem' }}>{book.icon}</div>
+              <h4 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f', marginBottom: '0.5rem' }}>
+                {book.title}
+              </h4>
+              <p style={{ fontSize: '0.875rem', color: darkMode ? '#9ca3af' : '#a8a29e', marginBottom: '1rem' }}>
+                Опубликовано: {book.year}
+              </p>
+              <p style={{ color: darkMode ? '#d1d5db' : '#57534e', lineHeight: '1.6', marginBottom: '1rem' }}>
+                {book.description}
+              </p>
+              <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                {book.topics.map((topic, topicIdx) => (
+                  <span 
+                    key={topicIdx} 
+                    style={{ 
+                      padding: '0.25rem 0.75rem', 
+                      background: darkMode ? '#374151' : '#fef08a', 
+                      color: darkMode ? '#fcd34d' : '#78350f', 
+                      borderRadius: '1rem', 
+                      fontSize: '0.75rem',
+                      fontWeight: '500'
+                    }}
+                  >
+                    {topic}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section style={{ background: `linear-gradient(90deg, ${darkMode ? '#1f2937' : '#fef3c7'} 0%, ${darkMode ? '#111827' : '#f5f3f0'} 100%)`, padding: '3rem 1rem', marginTop: '3rem' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', textAlign: 'center' }}>
           <div data-animate="true" id="stat-1" style={fadeInStyle('stat-1')}>
