@@ -149,13 +149,10 @@ function SapiensWebsite() {
         </div>
       </nav>
 
-      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 1rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '2rem' }}>
+      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 1rem' }}>
         <div>
           <h2 style={{ fontSize: '3rem', fontWeight: 'bold', background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', margin: 0, marginBottom: '1rem' }}>Краткая история человечества</h2>
           <p style={{ fontSize: '1.125rem', color: darkMode ? '#d1d5db' : '#57534e', marginBottom: '1.5rem', lineHeight: '1.6', margin: 0 }}>Как Homo sapiens пришёл к господству над миром? Какие революции сформировали нашу историю? Куда мы идём в будущем?</p>
-        </div>
-        <div style={{ background: `linear-gradient(135deg, ${darkMode ? '#374151' : '#fcd34d'} 0%, ${darkMode ? '#1f2937' : '#e5e7eb'} 100%)`, borderRadius: '1rem', padding: '2rem', textAlign: 'center', boxShadow: '0 20px 25px -5px rgba(0, 0, 0, 0.1)' }}>
-          <p style={{ color: darkMode ? '#fcd34d' : '#78350f', fontWeight: '600', fontSize: '1.125rem', fontStyle: 'italic', margin: 0 }}>История не движется к цели</p>
         </div>
       </section>
 
