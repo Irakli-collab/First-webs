@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
@@ -7,6 +7,27 @@ function SapiensWebsite() {
   const [selectedChapter, setSelectedChapter] = useState(null);
   const [activeTab, setActiveTab] = useState('excerpt');
   const [darkMode, setDarkMode] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+  const [visibleElements, setVisibleElements] = useState({});
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setVisibleElements(prev => ({ ...prev, [entry.target.id]: true }));
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('[data-animate]').forEach(el => observer.observe(el));
+    return () => observer.disconnect();
+  }, []);
 
   const timelineEvents = [
     { id: 1, title: '13.5 млрд лет назад', event: 'Возникновение материи и энергии', icon: '🌌' },
@@ -135,33 +156,50 @@ function SapiensWebsite() {
   const borderColor = darkMode ? '#374151' : '#fed7aa';
   const timelineColor = darkMode ? '#3b82f6' : '#f59e0b';
 
+  const parallaxStyle = {
+    transform: `translateY(${scrollY * 0.5}px)`,
+    transition: 'transform 0.1s ease-out'
+  };
+
+  const fadeInStyle = (id) => ({
+    opacity: visibleElements[id] ? 1 : 0,
+    transform: visibleElements[id] ? 'translateY(0)' : 'translateY(20px)',
+    transition: 'all 0.8s ease-out'
+  });
+
   return (
-    <div style={{ minHeight: '100vh', background: bgColor, transition: 'background 0.3s', color: textColor }}>
+    <div style={{ minHeight: '100vh', background: bgColor, transition: 'background 0.3s', color: textColor, scrollBehavior: 'smooth' }}>
+      <style>{`
+        * { scroll-behavior: smooth; }
+        @keyframes glow { 0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.3); } 50% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.6); } }
+        .glow-card:hover { animation: glow 2s ease-in-out; }
+      `}</style>
+
       <nav style={{ background: cardBg, boxShadow: '0 4px 6px rgba(0,0,0,0.1)', position: 'sticky', top: 0, zIndex: 50, borderBottom: `1px solid ${borderColor}` }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
             <span style={{ fontSize: '2rem' }}>📚</span>
             <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f', margin: 0 }}>Sapiens</h1>
           </div>
-          <button onClick={() => setDarkMode(!darkMode)} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.5rem', padding: '0.5rem' }}>
+          <button onClick={() => setDarkMode(!darkMode)} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.5rem', padding: '0.5rem', transition: 'transform 0.3s' }}>
             {darkMode ? '☀️' : '🌙'}
           </button>
         </div>
       </nav>
 
-      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 1rem' }}>
-        <div>
+      <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 1rem', ...parallaxStyle }}>
+        <div data-animate id="hero" style={fadeInStyle('hero')}>
           <h2 style={{ fontSize: '3rem', fontWeight: 'bold', background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', margin: 0, marginBottom: '1rem' }}>Краткая история человечества</h2>
           <p style={{ fontSize: '1.125rem', color: darkMode ? '#d1d5db' : '#57534e', marginBottom: '1.5rem', lineHeight: '1.6', margin: 0 }}>Как Homo sapiens пришёл к господству над миром? Какие революции сформировали нашу историю? Куда мы идём в будущем?</p>
         </div>
       </section>
 
       <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 1rem', background: darkMode ? 'rgba(31, 41, 55, 0.5)' : 'rgba(254, 243, 199, 0.3)', borderRadius: '1rem', marginBottom: '3rem' }}>
-        <h3 style={{ fontSize: '2rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f', marginBottom: '2rem', textAlign: 'center' }}>⏳ Временная шкала истории</h3>
+        <h3 data-animate id="timeline-title" style={{ fontSize: '2rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f', marginBottom: '2rem', textAlign: 'center', ...fadeInStyle('timeline-title') }}>⏳ Временная шкала истории</h3>
         
         <div style={{ position: 'relative', paddingLeft: '3rem' }}>
           {timelineEvents.map((event, idx) => (
-            <div key={event.id} style={{ marginBottom: '2rem', position: 'relative' }}>
+            <div key={event.id} data-animate id={`timeline-${event.id}`} style={{ marginBottom: '2rem', position: 'relative', ...fadeInStyle(`timeline-${event.id}`) }}>
               <div style={{ 
                 position: 'absolute', 
                 left: '-2.5rem', 
@@ -176,8 +214,13 @@ function SapiensWebsite() {
                 fontSize: '1rem',
                 fontWeight: 'bold',
                 boxShadow: `0 0 0 4px ${cardBg}, 0 0 0 6px ${timelineColor}`,
-                zIndex: 2
-              }}>
+                zIndex: 2,
+                transition: 'transform 0.3s',
+                cursor: 'pointer'
+              }}
+              onMouseEnter={(e) => e.target.style.transform = 'scale(1.2)'}
+              onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
+              >
                 {event.icon}
               </div>
               
@@ -194,7 +237,7 @@ function SapiensWebsite() {
                 }} />
               )}
               
-              <div style={{ background: cardBg, padding: '1rem', borderRadius: '0.5rem', border: `1px solid ${borderColor}`, cursor: 'pointer', transition: 'all 0.3s', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }} onClick={() => setSelectedChapter(chapters[event.id - 1])}>
+              <div className="glow-card" style={{ background: cardBg, padding: '1rem', borderRadius: '0.5rem', border: `1px solid ${borderColor}`, cursor: 'pointer', transition: 'all 0.3s ease', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }} onClick={() => setSelectedChapter(chapters[event.id - 1])}>
                 <p style={{ fontSize: '0.875rem', fontWeight: 'bold', color: timelineColor, margin: '0 0 0.5rem 0' }}>{event.title}</p>
                 <p style={{ fontSize: '1.125rem', fontWeight: '600', color: darkMode ? '#fcd34d' : '#78350f', margin: '0' }}>{event.event}</p>
               </div>
@@ -219,7 +262,7 @@ function SapiensWebsite() {
         ) : (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '1.5rem' }}>
             {filteredChapters.map((chapter) => (
-              <div key={chapter.id} onClick={() => setSelectedChapter(selectedChapter?.id === chapter.id ? null : chapter)} style={{ padding: '1.5rem', borderRadius: '1rem', border: `2px solid ${selectedChapter?.id === chapter.id ? (darkMode ? '#fbbf24' : '#b45309') : borderColor}`, background: selectedChapter?.id === chapter.id ? (darkMode ? 'linear-gradient(135deg, #374151 0%, #1f2937 100%)' : 'linear-gradient(135deg, #fef3c7 0%, #fce7f3 100%)') : cardBg, cursor: 'pointer', transition: 'all 0.4s', boxShadow: selectedChapter?.id === chapter.id ? '0 20px 25px -5px rgba(0, 0, 0, 0.2)' : '0 1px 3px rgba(0, 0, 0, 0.1)', transform: selectedChapter?.id === chapter.id ? 'translateY(-4px)' : 'translateY(0)' }}>
+              <div key={chapter.id} data-animate id={`chapter-${chapter.id}`} style={{ ...fadeInStyle(`chapter-${chapter.id}`), padding: '1.5rem', borderRadius: '1rem', border: `2px solid ${selectedChapter?.id === chapter.id ? (darkMode ? '#fbbf24' : '#b45309') : borderColor}`, background: selectedChapter?.id === chapter.id ? (darkMode ? 'linear-gradient(135deg, #374151 0%, #1f2937 100%)' : 'linear-gradient(135deg, #fef3c7 0%, #fce7f3 100%)') : cardBg, cursor: 'pointer', transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)', boxShadow: selectedChapter?.id === chapter.id ? '0 20px 25px -5px rgba(0, 0, 0, 0.3)' : '0 1px 3px rgba(0, 0, 0, 0.1)' }} onClick={() => setSelectedChapter(selectedChapter?.id === chapter.id ? null : chapter)} onMouseEnter={(e) => { if (selectedChapter?.id !== chapter.id) { e.currentTarget.style.transform = 'translateY(-8px)'; e.currentTarget.style.boxShadow = '0 15px 30px -5px rgba(0, 0, 0, 0.2)'; } }} onMouseLeave={(e) => { if (selectedChapter?.id !== chapter.id) { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)'; } }}>
                 <div style={{ display: 'flex', alignItems: 'start', gap: '1rem' }}>
                   <div style={{ fontSize: '2.5rem', flexShrink: 0 }}>{chapter.icon}</div>
                   <div style={{ flex: 1 }}>
@@ -228,7 +271,7 @@ function SapiensWebsite() {
                   </div>
                 </div>
                 {selectedChapter?.id === chapter.id && (
-                  <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: `2px solid ${borderColor}` }}>
+                  <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: `2px solid ${borderColor}`, animation: 'fadeIn 0.3s ease-in' }}>
                     <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
                       {['excerpt', 'questions'].map((tab) => (
                         <button key={tab} onClick={(e) => { e.stopPropagation(); setActiveTab(tab); }} style={{ padding: '0.5rem 0.75rem', borderRadius: '0.25rem', border: 'none', cursor: 'pointer', background: activeTab === tab ? (darkMode ? '#f59e0b' : '#b45309') : (darkMode ? '#1f2937' : '#fef08a'), color: activeTab === tab ? 'white' : (darkMode ? '#fcd34d' : '#78350f'), fontWeight: '500', transition: 'all 0.3s' }}>
@@ -260,18 +303,6 @@ function SapiensWebsite() {
 
       <section style={{ background: `linear-gradient(90deg, ${darkMode ? '#1f2937' : '#fef3c7'} 0%, ${darkMode ? '#111827' : '#f5f3f0'} 100%)`, color: darkMode ? '#fcd34d' : '#78350f', padding: '3rem 1rem', marginTop: '3rem' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', textAlign: 'center' }}>
-          <div><p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', margin: 0, marginBottom: '0.5rem' }}>10</p><p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>Основных глав</p></div>
-          <div><p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', margin: 0, marginBottom: '0.5rem' }}>70k+</p><p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>Лет истории</p></div>
-          <div><p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', margin: 0, marginBottom: '0.5rem' }}>30+</p><p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>Вопросов для размышления</p></div>
-        </div>
-      </section>
-
-      <footer style={{ background: cardBg, color: darkMode ? '#d1d5db' : '#78716c', padding: '2rem 1rem', marginTop: '3rem', textAlign: 'center', borderTop: `1px solid ${borderColor}` }}>
-        <p style={{ margin: 0, marginBottom: '0.5rem' }}>© 2025 Sapiens Study Platform</p>
-        <p style={{ fontSize: '0.875rem', color: darkMode ? '#9ca3af' : '#9f9b97', margin: 0 }}>Основано на книге Юваля Ноа Харари</p>
-      </footer>
-    </div>
-  );
-}
-
-ReactDOM.render(<SapiensWebsite />, document.getElementById('root'));
+          <div data-animate id="stat-1" style={fadeInStyle('stat-1')}><p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', margin: 0, marginBottom: '0.5rem' }}>10</p><p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>Основных глав</p></div>
+          <div data-animate id="stat-2" style={fadeInStyle('stat-2')}><p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', margin: 0, marginBottom: '0.5rem' }}>70k+</p><p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>Лет истории</p></div>
+          <div data-animate id="stat-3
