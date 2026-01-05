@@ -50,7 +50,6 @@ function SapiensWebsite() {
       description: 'История возникновения Homo sapiens и его предков',
       excerpt: 'Около 13,5 миллиардов лет назад возникла материя и энергия. На протяжении нескольких миллиардов лет они организовались в атомы и молекулы, затем в галактики и звезды. Примерно 4,5 миллиардов лет назад образовалась наша планета Земля.',
       questions: ['Что отличает Homo sapiens от других животных?', 'Как развивались предки человека на протяжении миллионов лет?', 'Какие биологические изменения были ключевыми для появления Homo sapiens?'],
-      images: ['https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=500&h=300&fit=crop', 'https://images.unsplash.com/photo-1484589065579-248aad0d8b13?w=500&h=300&fit=crop'],
       icon: '🧬'
     },
     {
@@ -60,7 +59,6 @@ function SapiensWebsite() {
       description: 'Когнитивная революция и её последствия',
       excerpt: 'Около 70 тысяч лет назад произошла когнитивная революция — резкое развитие человеческого мышления. Люди начали создавать мифы, воображаемые порядки, которые позволяли им сотрудничать в больших группах.',
       questions: ['Какова была когнитивная революция и когда она произошла?', 'Как способность к воображению изменила ход человеческой истории?', 'Почему мифы и воображаемые порядки так важны для общества?'],
-      images: ['https://images.unsplash.com/photo-1552664730-d307ca884978?w=500&h=300&fit=crop', 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=500&h=300&fit=crop'],
       icon: '💡'
     },
     {
@@ -70,7 +68,6 @@ function SapiensWebsite() {
       description: 'Жизнь древних людей до сельского хозяйства',
       excerpt: 'Охотники-собиратели не были примитивными. Они обладали богатым языком, разнообразным знанием своей окружающей среды и сложными социальными структурами. Их жизнь была не обязательно хуже, чем у древних земледельцев.',
       questions: ['Была ли жизнь охотников-собирателей примитивной и бедной?', 'Какие преимущества и недостатки имел образ жизни охотников-собирателей?', 'Почему переход к земледелию был не всегда прогрессом?'],
-      images: ['https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=300&fit=crop', 'https://images.unsplash.com/photo-1518495285542-c8f051d4c744?w=500&h=300&fit=crop'],
       icon: '🏹'
     },
     {
@@ -80,7 +77,6 @@ function SapiensWebsite() {
       description: 'Расселение человечества по земле',
       excerpt: 'Когда сапиенсы впервые вышли из Африки, они столкнулись с совершенно неизвестной окружающей средой. Тем не менее, благодаря своей способности к обучению и творчеству, они адаптировались почти ко всем условиям на Земле.',
       questions: ['Как люди смогли адаптироваться к различным климатическим условиям?', 'Какая роль сыграла креативность в расселении человечества?', 'Как географическое распределение повлияло на развитие разных культур?'],
-      images: ['https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=300&fit=crop', 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&h=300&fit=crop'],
       icon: '🌍'
     },
     {
@@ -90,7 +86,6 @@ function SapiensWebsite() {
       description: 'Появление письменности и государства',
       excerpt: 'Письменность появилась примерно в 3200 году до нашей эры в Месопотамии. Первые письменные тексты были бухгалтерскими записями — священники учитывали зерно и пиво. Письменность позволила управлять большими государствами.',
       questions: ['Как письменность изменила управление обществом?', 'Почему первые записи были учетом ресурсов?', 'Какова роль письменности в создании государств и законов?'],
-      images: ['https://images.unsplash.com/photo-1507842211343-583f20270319?w=500&h=300&fit=crop', 'https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=500&h=300&fit=crop'],
       icon: '📜'
     },
     {
@@ -100,7 +95,6 @@ function SapiensWebsite() {
       description: 'Древние империи и их системы',
       excerpt: 'Древние империи создали первые универсальные политические системы. Империя — это политическое образование, которое охватывает множество различных народов и культур, объединённых под единой политической властью.',
       questions: ['Как империи управляли множеством разных народов и культур?', 'Какие механизмы использовались для сохранения единства в империях?', 'Был ли имперский строй прогрессом или угнетением?'],
-      images: ['https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=500&h=300&fit=crop', 'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=500&h=300&fit=crop'],
       icon: '👑'
     },
     {
@@ -110,7 +104,6 @@ function SapiensWebsite() {
       description: 'Эпоха географических открытий',
       excerpt: 'В 1492 году Колумб пересёк Атлантический океан. Это событие привело к столкновению двух миров, которые развивались независимо друг от друга более 10 000 лет. Последствия этого столкновения изменили ход всей человеческой истории.',
       questions: ['Как встреча двух цивилизаций изменила мир?', 'Почему европейцы смогли завоевать Америку?', 'Каковы были долгосрочные последствия колонизации?'],
-      images: ['https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&h=300&fit=crop', 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=500&h=300&fit=crop'],
       icon: '⛵'
     },
     {
@@ -120,7 +113,6 @@ function SapiensWebsite() {
       description: 'Зарождение современной науки',
       excerpt: 'Научная революция началась в XVI веке. Учёные поняли, что они ничего не знают о мире и начали систематически его изучать. Они признали, что существуют пробелы в их знаниях, и это признание стало основой современной науки.',
       questions: ['Что такое научный метод и почему он важен?', 'Как признание незнания привело к развитию науки?', 'Какова роль науки в формировании современного мира?'],
-      images: ['https://images.unsplash.com/photo-1564466809058-bf4114d55352?w=500&h=300&fit=crop', 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=300&fit=crop'],
       icon: '🔬'
     },
     {
@@ -130,7 +122,6 @@ function SapiensWebsite() {
       description: 'Трансформация общества и экономики',
       excerpt: 'Индустриальная революция — это переход от аграрного общества к индустриальному. Машины начали заменять людей. Производство переместилось из деревень в города. Человечество впервые начало расходовать ископаемые энергоресурсы в больших масштабах.',
       questions: ['Как машины изменили экономику и общество?', 'Были ли положительные или отрицательные последствия индустриализации?', 'Какова роль ископаемых топлив в развитии современного мира?'],
-      images: ['https://images.unsplash.com/photo-1581092916550-e323be2ae537?w=500&h=300&fit=crop', 'https://images.unsplash.com/photo-1581092160562-40feed08a289?w=500&h=300&fit=crop'],
       icon: '⚙️'
     },
     {
@@ -140,7 +131,6 @@ function SapiensWebsite() {
       description: 'Будущее Homo sapiens и искусственного интеллекта',
       excerpt: 'Мы стоим перед выбором. Развитие технологий может привести к созданию постчеловеческих существ, которые будут господствовать над миром. Вопрос в том, что мы хотим стать в будущем.',
       questions: ['Какое будущее нас ждет в эпоху искусственного интеллекта?', 'Должны ли мы бояться технологического прогресса?', 'Что означает быть человеком в будущем?'],
-      images: ['https://images.unsplash.com/photo-1677442d019cecf8d01cd100a7a4e60fb1ae695c?w=500&h=300&fit=crop', 'https://images.unsplash.com/photo-1620712014215-c8c5788f46a9?w=500&h=300&fit=crop'],
       icon: '🤖'
     }
   ];
@@ -168,10 +158,13 @@ function SapiensWebsite() {
   });
 
   return (
-    <div style={{ minHeight: '100vh', background: bgColor, transition: 'background 0.3s', color: textColor, scrollBehavior: 'smooth' }}>
+    <div style={{ minHeight: '100vh', background: bgColor, transition: 'background 0.3s', color: textColor }}>
       <style>{`
         * { scroll-behavior: smooth; }
-        @keyframes glow { 0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.3); } 50% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.6); } }
+        @keyframes glow { 
+          0%, 100% { box-shadow: 0 0 20px rgba(245, 158, 11, 0.3); } 
+          50% { box-shadow: 0 0 30px rgba(245, 158, 11, 0.6); } 
+        }
         .glow-card:hover { animation: glow 2s ease-in-out; }
       `}</style>
 
@@ -181,25 +174,31 @@ function SapiensWebsite() {
             <span style={{ fontSize: '2rem' }}>📚</span>
             <h1 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f', margin: 0 }}>Sapiens</h1>
           </div>
-          <button onClick={() => setDarkMode(!darkMode)} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.5rem', padding: '0.5rem', transition: 'transform 0.3s' }}>
+          <button onClick={() => setDarkMode(!darkMode)} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '1.5rem', padding: '0.5rem' }}>
             {darkMode ? '☀️' : '🌙'}
           </button>
         </div>
       </nav>
 
       <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 1rem', ...parallaxStyle }}>
-        <div data-animate id="hero" style={fadeInStyle('hero')}>
-          <h2 style={{ fontSize: '3rem', fontWeight: 'bold', background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', margin: 0, marginBottom: '1rem' }}>Краткая история человечества</h2>
-          <p style={{ fontSize: '1.125rem', color: darkMode ? '#d1d5db' : '#57534e', marginBottom: '1.5rem', lineHeight: '1.6', margin: 0 }}>Как Homo sapiens пришёл к господству над миром? Какие революции сформировали нашу историю? Куда мы идём в будущем?</p>
+        <div data-animate="true" id="hero" style={fadeInStyle('hero')}>
+          <h2 style={{ fontSize: '3rem', fontWeight: 'bold', background: 'linear-gradient(135deg, #f59e0b 0%, #d97706 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', marginBottom: '1rem' }}>
+            Краткая история человечества
+          </h2>
+          <p style={{ fontSize: '1.125rem', color: darkMode ? '#d1d5db' : '#57534e', lineHeight: '1.6' }}>
+            Как Homo sapiens пришёл к господству над миром? Какие революции сформировали нашу историю? Куда мы идём в будущем?
+          </p>
         </div>
       </section>
 
       <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '3rem 1rem', background: darkMode ? 'rgba(31, 41, 55, 0.5)' : 'rgba(254, 243, 199, 0.3)', borderRadius: '1rem', marginBottom: '3rem' }}>
-        <h3 data-animate id="timeline-title" style={{ fontSize: '2rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f', marginBottom: '2rem', textAlign: 'center', ...fadeInStyle('timeline-title') }}>⏳ Временная шкала истории</h3>
+        <h3 data-animate="true" id="timeline-title" style={{ fontSize: '2rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f', marginBottom: '2rem', textAlign: 'center', ...fadeInStyle('timeline-title') }}>
+          ⏳ Временная шкала истории
+        </h3>
         
         <div style={{ position: 'relative', paddingLeft: '3rem' }}>
           {timelineEvents.map((event, idx) => (
-            <div key={event.id} data-animate id={`timeline-${event.id}`} style={{ marginBottom: '2rem', position: 'relative', ...fadeInStyle(`timeline-${event.id}`) }}>
+            <div key={event.id} data-animate="true" id={`timeline-${event.id}`} style={{ marginBottom: '2rem', position: 'relative', ...fadeInStyle(`timeline-${event.id}`) }}>
               <div style={{ 
                 position: 'absolute', 
                 left: '-2.5rem', 
@@ -212,15 +211,10 @@ function SapiensWebsite() {
                 alignItems: 'center', 
                 justifyContent: 'center',
                 fontSize: '1rem',
-                fontWeight: 'bold',
                 boxShadow: `0 0 0 4px ${cardBg}, 0 0 0 6px ${timelineColor}`,
                 zIndex: 2,
-                transition: 'transform 0.3s',
                 cursor: 'pointer'
-              }}
-              onMouseEnter={(e) => e.target.style.transform = 'scale(1.2)'}
-              onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}
-              >
+              }}>
                 {event.icon}
               </div>
               
@@ -237,7 +231,7 @@ function SapiensWebsite() {
                 }} />
               )}
               
-              <div className="glow-card" style={{ background: cardBg, padding: '1rem', borderRadius: '0.5rem', border: `1px solid ${borderColor}`, cursor: 'pointer', transition: 'all 0.3s ease', boxShadow: '0 2px 8px rgba(0,0,0,0.1)' }} onClick={() => setSelectedChapter(chapters[event.id - 1])}>
+              <div className="glow-card" style={{ background: cardBg, padding: '1rem', borderRadius: '0.5rem', border: `1px solid ${borderColor}`, cursor: 'pointer', transition: 'all 0.3s ease' }} onClick={() => setSelectedChapter(chapters[event.id - 1])}>
                 <p style={{ fontSize: '0.875rem', fontWeight: 'bold', color: timelineColor, margin: '0 0 0.5rem 0' }}>{event.title}</p>
                 <p style={{ fontSize: '1.125rem', fontWeight: '600', color: darkMode ? '#fcd34d' : '#78350f', margin: '0' }}>{event.event}</p>
               </div>
@@ -248,7 +242,13 @@ function SapiensWebsite() {
 
       <section style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 1rem 2rem' }}>
         <div style={{ position: 'relative', marginBottom: '2rem' }}>
-          <input type="text" placeholder="Поиск по главам..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)} style={{ width: '100%', padding: '0.75rem 1rem 0.75rem 2.5rem', border: `2px solid ${borderColor}`, borderRadius: '0.5rem', fontSize: '1rem', backgroundColor: cardBg, color: textColor, transition: 'all 0.3s' }} />
+          <input 
+            type="text" 
+            placeholder="Поиск по главам..." 
+            value={searchTerm} 
+            onChange={(e) => setSearchTerm(e.target.value)} 
+            style={{ width: '100%', padding: '0.75rem 1rem 0.75rem 2.5rem', border: `2px solid ${borderColor}`, borderRadius: '0.5rem', fontSize: '1rem', backgroundColor: cardBg, color: textColor }} 
+          />
           <span style={{ position: 'absolute', left: '1rem', top: '50%', transform: 'translateY(-50%)' }}>🔍</span>
         </div>
       </section>
@@ -262,24 +262,57 @@ function SapiensWebsite() {
         ) : (
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(400px, 1fr))', gap: '1.5rem' }}>
             {filteredChapters.map((chapter) => (
-              <div key={chapter.id} data-animate id={`chapter-${chapter.id}`} style={{ ...fadeInStyle(`chapter-${chapter.id}`), padding: '1.5rem', borderRadius: '1rem', border: `2px solid ${selectedChapter?.id === chapter.id ? (darkMode ? '#fbbf24' : '#b45309') : borderColor}`, background: selectedChapter?.id === chapter.id ? (darkMode ? 'linear-gradient(135deg, #374151 0%, #1f2937 100%)' : 'linear-gradient(135deg, #fef3c7 0%, #fce7f3 100%)') : cardBg, cursor: 'pointer', transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)', boxShadow: selectedChapter?.id === chapter.id ? '0 20px 25px -5px rgba(0, 0, 0, 0.3)' : '0 1px 3px rgba(0, 0, 0, 0.1)' }} onClick={() => setSelectedChapter(selectedChapter?.id === chapter.id ? null : chapter)} onMouseEnter={(e) => { if (selectedChapter?.id !== chapter.id) { e.currentTarget.style.transform = 'translateY(-8px)'; e.currentTarget.style.boxShadow = '0 15px 30px -5px rgba(0, 0, 0, 0.2)'; } }} onMouseLeave={(e) => { if (selectedChapter?.id !== chapter.id) { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)'; } }}>
+              <div 
+                key={chapter.id} 
+                data-animate="true" 
+                id={`chapter-${chapter.id}`} 
+                style={{ 
+                  ...fadeInStyle(`chapter-${chapter.id}`), 
+                  padding: '1.5rem', 
+                  borderRadius: '1rem', 
+                  border: `2px solid ${selectedChapter?.id === chapter.id ? (darkMode ? '#fbbf24' : '#b45309') : borderColor}`, 
+                  background: selectedChapter?.id === chapter.id ? (darkMode ? 'linear-gradient(135deg, #374151 0%, #1f2937 100%)' : 'linear-gradient(135deg, #fef3c7 0%, #fce7f3 100%)') : cardBg, 
+                  cursor: 'pointer', 
+                  transition: 'all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)'
+                }} 
+                onClick={() => setSelectedChapter(selectedChapter?.id === chapter.id ? null : chapter)}
+              >
                 <div style={{ display: 'flex', alignItems: 'start', gap: '1rem' }}>
                   <div style={{ fontSize: '2.5rem', flexShrink: 0 }}>{chapter.icon}</div>
                   <div style={{ flex: 1 }}>
-                    <h4 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f', margin: 0, marginBottom: '0.5rem' }}>{chapter.title}</h4>
+                    <h4 style={{ fontSize: '1.25rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f', margin: 0, marginBottom: '0.5rem' }}>
+                      {chapter.title}
+                    </h4>
                     <p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>{chapter.description}</p>
                   </div>
                 </div>
                 {selectedChapter?.id === chapter.id && (
-                  <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: `2px solid ${borderColor}`, animation: 'fadeIn 0.3s ease-in' }}>
+                  <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: `2px solid ${borderColor}` }}>
                     <div style={{ display: 'flex', gap: '0.5rem', marginBottom: '1rem', flexWrap: 'wrap' }}>
                       {['excerpt', 'questions'].map((tab) => (
-                        <button key={tab} onClick={(e) => { e.stopPropagation(); setActiveTab(tab); }} style={{ padding: '0.5rem 0.75rem', borderRadius: '0.25rem', border: 'none', cursor: 'pointer', background: activeTab === tab ? (darkMode ? '#f59e0b' : '#b45309') : (darkMode ? '#1f2937' : '#fef08a'), color: activeTab === tab ? 'white' : (darkMode ? '#fcd34d' : '#78350f'), fontWeight: '500', transition: 'all 0.3s' }}>
+                        <button 
+                          key={tab} 
+                          onClick={(e) => { e.stopPropagation(); setActiveTab(tab); }} 
+                          style={{ 
+                            padding: '0.5rem 0.75rem', 
+                            borderRadius: '0.25rem', 
+                            border: 'none', 
+                            cursor: 'pointer', 
+                            background: activeTab === tab ? (darkMode ? '#f59e0b' : '#b45309') : (darkMode ? '#1f2937' : '#fef08a'), 
+                            color: activeTab === tab ? 'white' : (darkMode ? '#fcd34d' : '#78350f'), 
+                            fontWeight: '500' 
+                          }}
+                        >
                           {tab === 'excerpt' ? 'Отрывок' : 'Вопросы'}
                         </button>
                       ))}
                     </div>
-                    {activeTab === 'excerpt' && <div><p style={{ fontSize: '0.875rem', fontWeight: '600', color: darkMode ? '#fcd34d' : '#78350f', marginBottom: '0.5rem' }}>Отрывок:</p><p style={{ color: darkMode ? '#d1d5db' : '#57534e', lineHeight: '1.6', fontStyle: 'italic', margin: 0 }}>{chapter.excerpt}</p></div>}
+                    {activeTab === 'excerpt' && (
+                      <div>
+                        <p style={{ fontSize: '0.875rem', fontWeight: '600', color: darkMode ? '#fcd34d' : '#78350f', marginBottom: '0.5rem' }}>Отрывок:</p>
+                        <p style={{ color: darkMode ? '#d1d5db' : '#57534e', lineHeight: '1.6', fontStyle: 'italic', margin: 0 }}>{chapter.excerpt}</p>
+                      </div>
+                    )}
                     {activeTab === 'questions' && (
                       <div>
                         <p style={{ fontSize: '0.875rem', fontWeight: '600', color: darkMode ? '#fcd34d' : '#78350f', marginBottom: '0.75rem' }}>Вопросы для рефлексии:</p>
@@ -301,7 +334,35 @@ function SapiensWebsite() {
         )}
       </section>
 
-      <section style={{ background: `linear-gradient(90deg, ${darkMode ? '#1f2937' : '#fef3c7'} 0%, ${darkMode ? '#111827' : '#f5f3f0'} 100%)`, color: darkMode ? '#fcd34d' : '#78350f', padding: '3rem 1rem', marginTop: '3rem' }}>
+      <section style={{ background: `linear-gradient(90deg, ${darkMode ? '#1f2937' : '#fef3c7'} 0%, ${darkMode ? '#111827' : '#f5f3f0'} 100%)`, padding: '3rem 1rem', marginTop: '3rem' }}>
         <div style={{ maxWidth: '1200px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '2rem', textAlign: 'center' }}>
-          <div data-animate id="stat-1" style={fadeInStyle('stat-1')}><p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', margin: 0, marginBottom: '0.5rem' }}>10</p><p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>Основных глав</p></div>
-          <div data-animate id="stat-2" style={fadeInStyle('stat-2')}><p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', margin: 0, marginBottom: '0.5rem' }}>70k+</p><p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>Л
+          <div data-animate="true" id="stat-1" style={fadeInStyle('stat-1')}>
+            <p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', margin: 0, marginBottom: '0.5rem' }}>10</p>
+            <p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>Основных глав</p>
+          </div>
+          <div data-animate="true" id="stat-2" style={fadeInStyle('stat-2')}>
+            <p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', margin: 0, marginBottom: '0.5rem' }}>70k+</p>
+            <p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>Лет истории</p>
+          </div>
+          <div data-animate="true" id="stat-3" style={fadeInStyle('stat-3')}>
+            <p style={{ fontSize: '2.25rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#92400e', margin: 0, marginBottom: '0.5rem' }}>3</p>
+            <p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>Великих революции</p>
+          </div>
+        </div>
+      </section>
+
+      <footer style={{ background: darkMode ? '#1f2937' : '#fef3c7', padding: '2rem 1rem', borderTop: `1px solid ${borderColor}`, marginTop: '3rem' }}>
+        <div style={{ maxWidth: '1200px', margin: '0 auto', textAlign: 'center' }}>
+          <p style={{ color: darkMode ? '#d1d5db' : '#78716c', margin: 0 }}>
+            © 2025 Sapiens — Краткая история человечества
+          </p>
+          <p style={{ color: darkMode ? '#9ca3af' : '#a8a29e', fontSize: '0.875rem', marginTop: '0.5rem' }}>
+            По мотивам книги Юваля Ноя Харари
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
+ReactDOM.render(<SapiensWebsite />, document.getElementById('root'));
