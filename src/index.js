@@ -341,10 +341,12 @@ function SapiensWebsite() {
         
         <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: '2rem', background: cardBg, padding: '2rem', borderRadius: '1rem', border: `2px solid ${borderColor}`, boxShadow: '0 10px 30px rgba(0,0,0,0.1)' }}>
           <div data-animate="true" id="author-photo" style={{ ...fadeInStyle('author-photo'), display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div style={{ width: '200px', height: '200px', borderRadius: '50%', overflow: 'hidden', border: `4px solid ${darkMode ? '#f59e0b' : '#b45309'}`, marginBottom: '1rem', boxShadow: '0 8px 20px rgba(0,0,0,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', background: `linear-gradient(135deg, ${darkMode ? '#1e293b' : '#fef3c7'} 0%, ${darkMode ? '#0f172a' : '#fed7aa'} 100%)` }}>
-              <div style={{ width: '160px', height: '160px', borderRadius: '50%', background: darkMode ? '#334155' : '#fbbf24', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '4rem', fontWeight: 'bold', color: darkMode ? '#fbbf24' : '#78350f', border: `3px solid ${darkMode ? '#475569' : '#f59e0b'}` }}>
-                ЮХ
-              </div>
+            <div style={{ width: '200px', height: '200px', borderRadius: '50%', overflow: 'hidden', border: `4px solid ${darkMode ? '#f59e0b' : '#b45309'}`, marginBottom: '1rem', boxShadow: '0 8px 20px rgba(0,0,0,0.2)' }}>
+              <img 
+                src="/images/harari.jpg" 
+                alt="Юваль Ной Харари" 
+                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              />
             </div>
             <h4 style={{ fontSize: '1.5rem', fontWeight: 'bold', color: darkMode ? '#fcd34d' : '#78350f', margin: '0 0 0.5rem 0' }}>Юваль Ной Харари</h4>
             <p style={{ color: darkMode ? '#d1d5db' : '#78716c', fontSize: '0.875rem', textAlign: 'center', margin: 0 }}>Историк, философ, писатель</p>
